@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="refresh" content="1">
+	<script>
+		var colors = ["red", "yellow", "blue", "green", "pink"], left = 15, width = 300;
+		function load(){
+			while (width>0){
+				var current = document.createElement("div");
+				random = Math.floor(Math.random() * colors.length);
+				current.style.position = "absolute";
+				current.style.left = left + "px";
+				current.style.top = left + "px";
+				current.style.width = width + "px";
+				current.style.height = width + "px";
+				current.style.background = colors[random];
+				document.getElementById("myBody").appendChild(current);
+				left += 15;
+				width -= 30;
+			}
+
+		}
+	</script>
+</head>
+<body id="myBody" onload = "load()"></body>
+</html>

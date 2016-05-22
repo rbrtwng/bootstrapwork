@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		var time_to_wait, x, the_timer;
+		x = 0;
+		function change_color(color){
+			document.getElementById("myDiv").style.background = color;
+		}
+
+		function move(){
+			/*
+			time_to_wait = prompt("How Long to sleep?")
+			setTimeout(alarm, time_to_wait);
+			
+			x = x+1;
+			p = x+"px";
+			document.getElementById("test").style.left = p;
+			*/
+
+		    
+		    var btn0 = document.getElementById("btn0");
+		    btn0.addEventListener("click",do_sth);
+
+		    
+		    document.getElementById("btn1").addEventListener("click",function(){
+		    	btn0.removeEventListener("click", do_sth);
+
+		    });
+
+
+		}
+
+		function alarm(){
+			alert("Wake UP!");
+		}
+
+		function do_sth(){alert("Clicked")}
+
+		
+	</script>
+</head>
+<body onload = "move()">
+	<div id="myDiv" style="background:yellow"
+		onmouseover = "change_color('red');"
+		onmouseout = "change_color('blue');"
+	>
+	Here's is a message!!
+	</div>
+	<br>
+	<!--<img src="test.png" id="test" style="position:absolute; left:0px">-->
+	<br>
+	<button id="btn0" onclick="alert('Hola')">Click Me!</button>
+	<br>
+	<button id="btn1">Remove Eventlistener</button>
+</body>
+</html>
