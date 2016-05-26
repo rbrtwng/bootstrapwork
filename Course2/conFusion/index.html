@@ -257,10 +257,17 @@
                         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <a class="right carousel-control" href="#carouselExample" role="button" data-slide="next">
                         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
+
+                    <!--buttons-->
+                    <div class="btn-group" id="carouselButtons">
+                        <button class="btn btn-danger btn-xs" id="carouselPause"><span id="carouseIco" class="glyphicon glyphicon-pause" aria-hidden="true"></span></button>
+                        <!-- //Try to use the same button for pause and play-->
+                        <!--button class="btn btn-danger btn-xs" id="carouselPlay"><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button-->
+                    </div>
                 </div>
                 </div>
         </div>
@@ -430,6 +437,28 @@
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script-->
+    <script>
+        var play=true;
+        $(document).ready(function(){
+            $("#carouselExample").carousel({interval: 2000});
+
+            $("#carouselPause").click(function(){
+                if(play){
+                     $("#carouselExample").carousel('pause');
+                     play=false;
+                }else{
+                     $("#carouselExample").carousel('cycle');
+                     play=true;
+                }
+               
+                $("#carouseIco").toggleClass("glyphicon-pause glyphicon-play");
+            });
+            //Try to use the same button for pause and play
+           // $("#carouselPlay").click(function(){
+             //   $("#carouselExample").carousel('cycle');
+            //});
+        });
+    </script>
 </body>
 
 </html>
