@@ -58,7 +58,10 @@
                     <li><a href="contactus.html">Contact</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <!--Remove data-* for Assignment 4--->
+                    <!--li><a data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li-->
+                    <li><a id="loginButton"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
                 </ul>
                <!--form class="navbar-form navbar-right">
                 <div class="form-group">
@@ -91,6 +94,7 @@
     </nav>
 
     <div id="loginModal" class="modal fade" role="dialog">
+        <!--I have to add a width othewise the modal is urgly on my screen-->
         <div class="modal-dialog" style="width: 40%;">
             <div class="modal-content">
                 <div class="modal-header">
@@ -203,7 +207,9 @@
                 </div>
                 <div class="col-xs-12 col-sm-2">
                     <!--a href="#reserve" data-toggle="tooltip" title="Or Call us at +852 1234 5678" data-placement="bottom" class="btn btn-warning btn-block">Reserve Tables</a-->
-                    <a data-toggle="modal" data-target="#reserveModal" class="btn btn-warning btn-block">Reserve Tables</a>
+                    <!--Remove data-* for Assignment 4--->
+                    <!--a data-toggle="modal" data-target="#reserveModal" class="btn btn-warning btn-block">Reserve Tables</a-->
+                    <a id="reserveButton" class="btn btn-warning btn-block">Reserve Tables</a>
 
                 </div>
             </div>
@@ -458,6 +464,17 @@
              //   $("#carouselExample").carousel('cycle');
             //});
         });
+        
+        //javascript for loginModal
+        $("#loginButton").click(function(){
+            $("#loginModal").modal();
+        });
+        //javascript for reserveModal
+
+          $("#reserveButton").click(function(){
+            $("#reserveModal").modal();
+        });
+        
     </script>
 </body>
 
